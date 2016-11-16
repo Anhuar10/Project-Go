@@ -9,7 +9,7 @@ public:
 
 private:
 	int MTBF;
-	double criticality;
+	double criticality; // Roshane
 	int priority[];
 
 };
