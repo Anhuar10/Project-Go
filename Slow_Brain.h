@@ -9,7 +9,6 @@ public:
 
 private:
 	int MTBF;
-	int critical;
 	double criticality;
 	int priority[];
 
