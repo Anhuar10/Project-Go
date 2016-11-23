@@ -7,22 +7,36 @@ using namespace std;
 
 PCTS::PCTS()
 {
-	bool lightStatus[3] = {true, true, true}; // Instantiate values to all true
+
 }
 
-void PCTS::contact_division()// defining fucntinos
+void PCTS::contact_division(int x, int y)// defining fucntinos
 {
+	if (x = 1)//contact traffic maintnance 
+	{
+		cout << "System will now contact Pomona Traffic Maintinence" << endl;
+		if (y=0)
+		{
+			cout << "Intersection have been fixed by Traffic Maintinence" << endl;
+		}
+
+	}
+	else if (x = 0)// contact public safety
+	{
+		cout << "System will contact Pomona Traffic Safety" << endl;
+	}
+	else
+		cout<< "Error, you have shitty software"<<endl;
+
 	//how will we contact division 
 }
 
 void PCTS::Start_Calculations()
 {
-
+	
 }
-int PCTS::Determine_State(bool x, bool y, bool z)
+void PCTS::Input_State(int x)
 {
-
-
 }
 void PCTS::New_State()
 {
