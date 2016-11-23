@@ -7,7 +7,7 @@ using namespace std;
 
 PCTS::PCTS()
 {
-
+	bool lightStatus[3] = {true, true, true}; // Instantiate values to all true
 }
 
 void PCTS::contact_division()// defining fucntinos
@@ -19,8 +19,10 @@ void PCTS::Start_Calculations()
 {
 
 }
-void PCTS::Input_State(int x)
+int PCTS::Determine_State(bool x, bool y, bool z)
 {
+
+
 }
 void PCTS::New_State()
 {

@@ -8,10 +8,12 @@ public:
 	PCTS();// muthafucking constructor 
 	void contact_division();
 	void Start_Calculations();
-	void Input_State(int);
+	//Changing way the state is determined
+	int Determine_State(bool,bool,bool);
 	void New_State();
 	void Light_Prolong(); 
 private:
+	bool lightStatus[];
 	double criticality;
 	int priority[];
 
