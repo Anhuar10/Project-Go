@@ -2,7 +2,7 @@
 #ifndef PCTS_H
 #define PCTS_H
 
-class PCTS
+class PCTS: public Slow_Brain, public Fast_Brain, public Divisions
 {
 public:
 	PCTS();// muthafucking constructor 
@@ -12,8 +12,8 @@ public:
 	void New_State();
 	void Light_Prolong(); 
 private:
-	//double criticality;
-	//int priority[];
+	double criticality;
+	int priority[];
 
 };
 
