@@ -44,7 +44,7 @@ int PCTS::Determine_State(bool x, bool y, bool z)
 								state = 6;
 							}
 								else if(x == false && y == false && z == false){
-									state = 6;
+									state = 7;
 								}	
 
 	return state;
