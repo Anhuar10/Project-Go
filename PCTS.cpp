@@ -5,10 +5,17 @@
 #include "Slow_Brain.h"// Call in Slow brain header file 
 using namespace std;
 
-PCTS::PCTS()
+PCTS::PCTS(bool x, bool y, bool z)
 {
+	Slow_Brain slowBrain;
+	Fast_Brain fastBrain;
 	bool lightStatus[3] = {true, true, true}; // Instantiate values to all true
+	lightStatus[0] = x;
+	lightStatus[1] = y;
+	lightStatus[2] = z;
 	state = 0;
+
+
 }
 
 void PCTS::contact_division()// defining fucntinos
