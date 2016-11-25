@@ -16,6 +16,7 @@ private:
 	bool lightStatus[];
 	double criticality;
 	int priority[];
+	int state;
 
 };
 
