@@ -1,6 +1,6 @@
 #pragma once
 
-class slow_brain : public Fast_Brain // trying to do inheritence, PCTS is Base, slow_brain derived 
+class Slow_Brain : public Fast_Brain // trying to do inheritence, PCTS is Base, slow_brain derived 
 {
 public:
 	// Constructor
