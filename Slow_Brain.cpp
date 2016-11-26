@@ -1,13 +1,13 @@
 #pragma once
 
-class Slow_Brain : public Fast_Brain // trying to do inheritence, PCTS is Base, slow_brain derived 
+class Slow_Brain
 {
 public:
 	// Constructor
-	Slow_Brain(int current_state, double input_reliability[])
+	Slow_Brain(int current_state, double input_reliability)
 	{
-		this.state = current_state;
-		this.reliability = input_reliability;
+		state = current_state;
+		reliability = input_reliability;
 	}
 
 	double Calculate_Criticality(Slow_Brain s)
@@ -15,19 +15,19 @@ public:
 		double r, c;
 		// r = reliability
 		// c = criticality
-		r = s.reliability[s.state];
+		r = s.reliability;
 		c = (0.999999274 - r) / 2;
 		return c;
 	}
 
 	int Calculate_Priority(Slow_Brain s)
 	{
-		double priority[2] = {};
+		int priority[2] = {};
 		switch (s.state)
 		{
 		case 0:
 		{
-			return priority;
+			return priority[0];
 		}
 		case 1:
 		{
@@ -41,7 +41,7 @@ public:
 		{
 			priority[0] = 2;
 			priority[1] = 3;
-			return priority;
+			return priority[0-1];
 		}
 		case 4:
 		{
@@ -51,19 +51,24 @@ public:
 		{
 			priority[0] = 3;
 			priority[1] = 1;
-			return priority;
+			return priority[0-1];
 		}
 		case 6:
 		{
 			priority[0] = 2;
 			priority[1] = 1;
-			return priority;
+			return priority[0-1];
 		}
 		case 7:
 		{
-			priority[] = { 2,3,1 };
-			return priority;
+			priority[0] = 2;
+			priority[1] = 3;
+			priority[2] = 1;
+			return priority[0-2];
 		}
 		}
 	}
+private:
+	int state;
+	double reliability;
 };
