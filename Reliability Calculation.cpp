@@ -26,8 +26,7 @@ int main()
 	{
 	case(0): 
 	{
-
-			stateReliability[0] = 1 - (1 - reliabilityArray[0])*((1 - reliabilityArray[1])*((1 - reliabilityArray[2]))
+		stateReliability[0] = 1 - (1 - reliabilityArray[0])*((1 - reliabilityArray[1])*((1 - reliabilityArray[2]))
 	}
     return 0;
 }
