@@ -1,4 +1,5 @@
 #pragma once
+#include <queue>
 
 class Slow_Brain : public Fast_Brain // trying to do inheritence, PCTS is Base, slow_brain derived 
 {
