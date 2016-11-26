@@ -2,16 +2,21 @@
 #ifndef SLOW_BRAIN_H
 #define SLOW_BRAIN_H
 
-class slow_brain: public PCTS// trying to do inheritence, PCTS is Base, slow_brain derived 
+class Slow_Brain : public Fast_Brain // trying to do inheritence, PCTS is Base, slow_brain derived 
 {
 public:
-	slow_brain();
+	// Constructor
+	Slow_Brain(int current_state, double input_reliability[])
+	{
+		state = current_state;
+		reliability = input_reliability[0];//IDK what number should be in the array brackets
+	};
+	double Calculate_Criticality(Slow_Brain s);
+	int Calculate_Priority(Slow_Brain s);
 
-private:
-	int MTBF;
-	double criticality;
-	int priority[];
-
+protected:
+	int state;
+	double reliability;// should this be an array?
 };
 
 
