@@ -22,12 +22,10 @@ int main()
 		reliabilityArray[j] = exp(a);
 		cout << "Reliability[" << j << "]: " << reliabilityArray[j] << endl;
 	}
-	switch (state[8])
-	{
-	case(0): 
-	{
-		stateReliability[0] = 1 - (1 - reliabilityArray[0])*((1 - reliabilityArray[1])*((1 - reliabilityArray[2]))
-	}
+
     return 0;
+					
+	//Reliability Table put into array instead of doing calculations in code
+	// double reliability [8]: {0.999999274,0.999923994,0.999848351, 0.98412732, 0.99995425, 0.995211502, 0.990445933};
 }
 
