@@ -12,11 +12,14 @@ public:
 	int Determine_State(bool,bool,bool);
 	void New_State();
 	void Light_Prolong(); 
-private:
-	bool lightStatus[];
-	double criticality;
 	int priority[];
+private:
+	int state;
+	bool lightStatus[];
+	double criticality[];
+	
 
 };
 
 #endif
+

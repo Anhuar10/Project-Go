@@ -9,14 +9,17 @@ public:
 	Slow_Brain(int current_state, double input_reliability[])
 	{
 		state = current_state;
-		reliability = input_reliability[0];//IDK what number should be in the array brackets
+		*reliability = input_reliability[9];//allocating 9 element spaces with "reliability being the pointer"
 	};
-	double Calculate_Criticality(Slow_Brain s);
+	void Calculate_Criticality(Slow_Brain s);
 	int Calculate_Priority(Slow_Brain s);
 
 protected:
 	int state;
-	double reliability;// should this be an array?
+	int prevState;
+	double reliability[];
+	double criticality[];
+	double *reliability;// pointer to an element of an array 
 };
 
 
