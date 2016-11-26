@@ -1,71 +1,64 @@
-#pragma once
-#include <queue>
+#include <iostream>
+#include <iomanip>
+#include <math.h>
+#include "Slow_Brain.h"
 
-class Slow_Brain : public Fast_Brain // trying to do inheritence, PCTS is Base, slow_brain derived 
+using namespace std;
+
+
+double Slow_Brain::Calculate_Criticality(Slow_Brain s)
 {
-public:
-	// Constructor
-	Slow_Brain(int current_state, double input_reliability[])
-	{
-		this.state = current_state;
-		this.reliability = input_reliability;
-	}
+	double r, c;
+	// r = reliability
+	// c = criticality
+	r = s.reliability[s.state];
+	c = (0.999999274 - r) / 2;
+	return c;
+}
 
-	double Calculate_Criticality(Slow_Brain s)
+int Slow_Brain::Calculate_Priority(Slow_Brain s)
+{
+	double priority[2] = {};// delcaring an array with 3 spaces 
+	switch (s.state)// cases dependednt on state 
 	{
-		double r, c;
-		// r = reliability
-		// c = criticality
-		r = s.reliability[s.state];
-		c = (0.999999274 - r) / 2;
-		return c;
-	}
-
-	int Calculate_Priority(Slow_Brain s)
+	case 0:
 	{
-		double priority[2] = {};
-		switch (s.state)
-		{
-		case 0:
-		{
-			return priority;
-		}
-		case 1:
-		{
-			return priority[0] = 3;
-		}
-		case 2:
-		{
-			return priority[0] = 2;
-		}
-		case 3:
-		{
-			priority[0] = 2;
-			priority[1] = 3;
-			return priority;
-		}
-		case 4:
-		{
-			return priority[0] = 1;
-		}
-		case 5:
-		{
-			priority[0] = 3;
-			priority[1] = 1;
-			return priority;
-		}
-		case 6:
-		{
-			priority[0] = 2;
-			priority[1] = 1;
-			return priority;
-		}
-		case 7:
-		{
-			priority[] = { 2,3,1 };
-			return priority;
-		}
-		}
+		return 0;// we need to figure out a new way to impliment this 
 	}
-};
-//	http://www.cplusplus.com/reference/queue/priority_queue/priority_queue/
+	case 1:
+	{
+		return priority[0] = 3;
+	}
+	case 2:
+	{
+		return priority[0] = 2;
+	}
+	case 3:
+	{
+		priority[0] = 2;
+		priority[1] = 3;
+		return *priority;// not sure if this is a pointer i.e. "*" when i put it on it removes the error
+	}
+	case 4:
+	{
+		return priority[0] = 1;
+	}
+	case 5:
+	{
+		priority[0] = 3;
+		priority[1] = 1;
+		return *priority;
+	}
+	case 6:
+	{
+		priority[0] = 2;
+		priority[1] = 1;
+		return *priority;
+	}
+	case 7:
+	{
+		priority[] = { 2,3,1 };
+		return *priority;
+	}
+	}
+}
