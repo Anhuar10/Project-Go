@@ -8,28 +8,63 @@
 using namespace std;
 
 
-Public_Divisions::Public_Divisions()
+Public_Divisions::Public_Divisions(int Priority, bool lightStatus)
 {
+	cout << "Public divisions has been contacted";
+    Sleep(1000);
+    cout << '.';
+    Sleep(1000);
+    cout << '.';
+    Sleep(1000);
+    cout << '.' << "\n\n";
 
+    Report_Progress(Priority, lightStatus[Priority - 1]);
 }
 
-Public_Divisions::Receive_Call(int call)
-{
 
-}
-
-Public_Divisions::Report_Progress(int lightValue)
+Public_Divisions::Report_Progress(int Priority,bool lightStatus)
 {
     srand(time(0));
     int x = rand() % 10 + 5;
 
-    cout << "Maintenance in progress: \n"
+    switch(Priority)
+    {
+        case 1:
+        {
+            cout << "\nContacting Pomona Traffic Safety";
+            Sleep(1000);
+            cout << '.';
+            Sleep(1000);
+            cout << '.';
+            Sleep(1000);
+            cout << '.' << "\n\n";
+            break;
+        }
+        case 2:
+        {
+            cout << "\nConducting maintenance on traffic light " << Priority << '.' << endl;
+            break;
+        }
+        case 3:
+        {
+            cout << "\nContacting Pomona Traffic Safety";
+            Sleep(1000);
+            cout << '.';
+            Sleep(1000);
+            cout << '.';
+            Sleep(1000);
+            cout << '.' << "\n\n";
+            break;
+        }
+    }
+    
     for (int i=x; i >=0; i--)
     {
         cout << i << endl;
         Sleep(1000);
-    }
+    };
 
-    cout << "Intersection " << lightValue << " has been repaired." << endl;
+    lightStatus = true;
+    cout << "\nLight " << Priority << " has been repaired" << endl;
 
 }

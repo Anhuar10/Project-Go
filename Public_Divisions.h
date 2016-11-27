@@ -5,10 +5,9 @@
 class Public_Divisions
 {
 public:
-    Public_Divisions();
-    void Receive_Call(int stateValue);
-    int Report_Progress(int stateValue);
+    Public_Divisions(bool, int);
+    int Report_Progress(bool, int);
 
 private:
-}
+};
 #endif

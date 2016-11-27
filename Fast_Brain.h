@@ -2,15 +2,17 @@
 #ifndef FAST_BRAIN_H
 #define FAST_BRAIN_H
 
-class fast_brain: public PCTS// trying to do inheritence, PCTS is Base, slow_brain derived 
+//Base class Fast_Brain
+class Fast_Brain:  
 {
 public:
-	fast_brain();
-
+	Fast_Brain(int inputState);
+	void Store_Criticality();
+	void Store_Priority();
 private:
 	int MTBF;
 	double criticality;
-	int priority[];
+	int priority;
 
 };
 
