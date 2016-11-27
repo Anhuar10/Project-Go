@@ -6,7 +6,7 @@ class Public_Divisions
 {
 public:
     Public_Divisions(bool, int);
-    void Report_Progress(bool, int);
+    bool Report_Progress(bool, int);
 
 private:
 };

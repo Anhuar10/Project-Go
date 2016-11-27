@@ -19,29 +19,36 @@ PCTS::PCTS(bool firstLight, bool secondLight, bool thirdLight)
 	lightStatus[1] = secondLight;
 	lightStatus[2] = thirdLight;
 
+	
+
+	state = Determine_State(lightStatus[0], lightStatus[1], lightStatus[2]);
 	cout << "The current working intersections are: \n";
-	for(int i = 0; i>3; i++){
+	for(int i = 0; i<3; i++){
 		if(lightStatus[i] == true){
-			cout << i << endl;
+			cout << i + 1 << endl;
 		}
 	}
 
-	state = Determine_State(lightStatus[0], lightStatus[1], lightStatus[2]);
-
 	Start_Calculations();
 	contact_division();
+
+	cout << "\n\nNew light value is " << lightStatus[priority-1] << "\n" << endl;
+
 	New_State();
 }
 
 void PCTS::contact_division()// defining fucntions
 {
-	Public_Divisions divisions(priority, lightStatus[priority-1]);
+	Public_Divisions divisions(lightStatus[priority-1], priority);
+	lightStatus[priority -1] = divisions.Report_Progress(lightStatus[priority-1], priority);
 
 }
 
 void PCTS::Start_Calculations()
 {
 	Slow_Brain brain1(state, prevState, priority);
+	priority = brain1.Calculate_Priority(state, priority);
+	
 	
 }
 int PCTS::Determine_State(bool x, bool y, bool z)
@@ -71,7 +78,7 @@ int PCTS::Determine_State(bool x, bool y, bool z)
 									state = 7;
 								}	
 
-
+	cout << "\nThe current state is " << state << ".\n" << endl;
 	return state;
 }
 void PCTS::New_State()

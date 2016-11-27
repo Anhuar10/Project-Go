@@ -24,7 +24,7 @@ void Slow_Brain::Calculate_Criticality(int state, int prevState)
 	criticality[state] = (criticality[prevState] + (reliability[state]-reliability[prevState])/ 2);
 }
 
-void Slow_Brain::Calculate_Priority(int state, int priority)
+int Slow_Brain::Calculate_Priority(int state, int priority)
 {
 	
 	switch (state)// cases dependednt on state 
@@ -69,4 +69,6 @@ void Slow_Brain::Calculate_Priority(int state, int priority)
 			break;
 		}
 	}
+
+	return priority;
 }

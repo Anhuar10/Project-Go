@@ -18,18 +18,18 @@ Public_Divisions::Public_Divisions(bool lightStatus, int Priority)
     Sleep(1000);
     cout << '.' << "\n\n";
 
-    Report_Progress(Priority, lightStatus);
+  
 }
 
 
-void Public_Divisions::Report_Progress(bool lightStatus,int Priority)
+bool Public_Divisions::Report_Progress(bool lightStatus,int Priority)
 {
     srand(time(0));
     int x = rand() % 10 + 5;
 
-    switch(Priority)
+    switch(Priority - 1)
     {
-        case 1:
+        case 0:
         {
             cout << "\nContacting Pomona Traffic Safety";
             Sleep(1000);
@@ -40,12 +40,12 @@ void Public_Divisions::Report_Progress(bool lightStatus,int Priority)
             cout << '.' << "\n\n";
             break;
         }
-        case 2:
+        case 1:
         {
             cout << "\nConducting maintenance on traffic light " << Priority << '.' << endl;
             break;
         }
-        case 3:
+        case 2:
         {
             cout << "\nContacting Pomona Traffic Safety";
             Sleep(1000);
@@ -64,7 +64,15 @@ void Public_Divisions::Report_Progress(bool lightStatus,int Priority)
         Sleep(1000);
     };
 
+	//Dummy outputs for testing light values
+	cout << "\n\nOld light value is " << lightStatus << "\n" << endl;
+
     lightStatus = true;
-    cout << "\nLight " << Priority << " has been repaired" << endl;
+
+	
+    cout << "\nLight " << Priority  << " has been repaired" << endl;
+
+
+	return true;
 
 }

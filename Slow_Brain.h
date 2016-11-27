@@ -8,7 +8,7 @@ public:
 	// Constructor
 	Slow_Brain(int, int, int);
 	void Calculate_Criticality(int, int);
-	void Calculate_Priority(int, int);
+	int Calculate_Priority(int, int);
 
 protected:
 	int state;

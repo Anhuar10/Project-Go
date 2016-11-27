@@ -14,10 +14,11 @@ public:
 	int Determine_State(bool,bool,bool);
 	void New_State(); 
 	int priority;
+	bool lightStatus[3];
 private:
-	static int state;
-	static int prevState;
-	static bool lightStatus[3];
+	int state;
+	int prevState;
+	
 	double criticality[3];
 	
 	
