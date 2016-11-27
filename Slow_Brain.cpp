@@ -36,9 +36,40 @@ double Slow_Brain::Calculate_Criticality(Slow_Brain s)
 	
 	for(int i = 0; i<= reliability.Length; i++)
 	{
-		if(s.state == i)
-		{
-			
+		int previousState;
+
+		if((previousState == 0)&&(s.state == 1))
+			criticality = crit[0];
+		else if((previousState == 1)&&(s.state == 3))
+			criticality = crit[1];
+		else if((previousState == 1)&&(s.state == 5))
+			criticality = crit[2];
+		else if((previousState == 3)&&(s.state == 7))
+			criticality = crit[3];
+		else if((previousState == 5)&&(s.state == 7))
+			criticality = crit[14];
+		
+		else if((previousState == 0)&&(s.state == 3))
+			criticality = crit[4];
+		else if((previousState == 2)&&(s.state == 3))
+			criticality = crit[5];
+		else if((previousState == 2)&&(s.state == 6))
+			criticality = crit[6];
+		else if((previousState == 3)&&(s.state == 7))
+			criticality = crit[7];
+		else if((previousState == 6)&&(s.state == 7))
+			criticality = crit[8];
+		
+		else if((previousState == 0)&&(s.state == 4))
+			criticality = crit[9];
+		else if((previousState == 4)&&(s.state == 5))
+			criticality = crit[10];
+		else if((previousState == 4)&&(s.state == 6))
+			criticality = crit[11];
+		else if((previousState == 5)&&(s.state == 7))
+			criticality = crit[12];
+		else if((previousState == 6)&&(s.state == 7))
+			criticality = crit[13];
 				
 		
 		
