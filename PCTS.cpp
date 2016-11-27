@@ -7,8 +7,10 @@
 using namespace std;
 
 PCTS::PCTS(bool firstLight, bool secondLight, bool thirdLight)
-	: Slow_Brain(int inputState,int previousState, int Priority), Public_Divisions(int Priority, bool lightStatus)
+	
 {
+	cout << "Welcome to the Pomona PCTS system.\n" << endl;
+
 	bool lightStatus[3] = {true, true, true}; // Instantiate values to all true
 	state = 0;
 	prevState = 0;
@@ -17,10 +19,18 @@ PCTS::PCTS(bool firstLight, bool secondLight, bool thirdLight)
 	lightStatus[1] = secondLight;
 	lightStatus[2] = thirdLight;
 
+	cout << "The current working intersections are: \n";
+	for(int i = 0; i>3; i++){
+		if(lightStatus[i] == true){
+			cout << i << endl;
+		}
+	}
+
 	state = Determine_State(lightStatus[0], lightStatus[1], lightStatus[2]);
 
 	Start_Calculations();
 	contact_division();
+	New_State();
 }
 
 void PCTS::contact_division()// defining fucntions
@@ -61,11 +71,14 @@ int PCTS::Determine_State(bool x, bool y, bool z)
 									state = 7;
 								}	
 
+
 	return state;
 }
 void PCTS::New_State()
 {
 	prevState = state;
 	state = Determine_State(lightStatus[0], lightStatus[1], lightStatus[2]);
+
+	cout << "\nAfter repairs, the current state is: " << state << endl;
 
 }

@@ -15,7 +15,7 @@ Slow_Brain::Slow_Brain(int inputState,int previousState, int Priority){
     reliability[6] = 	0.990445933;
 	reliability[7] = 	0;
 
-criticality[3] = {};
+criticality[0] = 0.999999;
 	Calculate_Priority(inputState, Priority);
 					
 }
