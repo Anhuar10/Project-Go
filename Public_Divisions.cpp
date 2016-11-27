@@ -8,7 +8,7 @@
 using namespace std;
 
 
-Public_Divisions::Public_Divisions(int Priority, bool lightStatus)
+Public_Divisions::Public_Divisions(bool lightStatus, int Priority)
 {
 	cout << "Public divisions has been contacted";
     Sleep(1000);
@@ -18,11 +18,11 @@ Public_Divisions::Public_Divisions(int Priority, bool lightStatus)
     Sleep(1000);
     cout << '.' << "\n\n";
 
-    Report_Progress(Priority, lightStatus[Priority - 1]);
+    Report_Progress(Priority, lightStatus);
 }
 
 
-Public_Divisions::Report_Progress(int Priority,bool lightStatus)
+void Public_Divisions::Report_Progress(bool lightStatus,int Priority)
 {
     srand(time(0));
     int x = rand() % 10 + 5;
