@@ -1,22 +1,25 @@
 #pragma once
+#include "Slow_Brain.h"
+#include "Public_Divisions.h"
 #ifndef PCTS_H
 #define PCTS_H
 
-class PCTS: public Slow_Brain, public Fast_Brain, public Divisions
+class PCTS
 {
 public:
-	PCTS();// muthafucking constructor 
+	PCTS(int, int, int);// muthafucking constructor
 	void contact_division();
 	void Start_Calculations();
 	//Changing way the state is determined
-	int Determine_State(bool,bool,bool);
-	void New_State();
-	void Light_Prolong(); 
+	int Determine_State(int,int,int);
+	void New_State(); 
+	int priority;
+	int lightStatus[3];
+	int state;
 private:
-	bool lightStatus[];
-	double criticality;
-	int priority[];
-
+	int prevState;
+	double criticality[3];
 };
 
 #endif
+
