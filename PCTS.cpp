@@ -32,8 +32,6 @@ PCTS::PCTS(int firstLight, int secondLight, int thirdLight)
 		Start_Calculations();
 		contact_division();
 
-		cout << "\n\nNew light value is " << lightStatus[priority - 1] << "\n" << endl;
-
 		New_State();
 	}
 
